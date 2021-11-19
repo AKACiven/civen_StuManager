@@ -20,6 +20,7 @@
     </environments>
     <mappers>
         <mapper resource="com/civen/civen_stumanager/mapper/AdminMapper.xml"/>
+        <mapper resource="com/civen/civen_stumanager/mapper/StudentMapper.xml"/>
     </mappers>
 
 
