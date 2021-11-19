@@ -8,7 +8,6 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Service;
 
 /**
- * @author EdwardXu
  */
 @Service
 public class AdminServiceImpl implements AdminService {

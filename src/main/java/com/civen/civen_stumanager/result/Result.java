@@ -5,8 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * @author EdwardXu
- * @description 返回给前端的结果
+ * 返回给前端的结果
  */
 @Data
 @NoArgsConstructor

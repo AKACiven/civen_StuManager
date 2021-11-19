@@ -1,8 +1,7 @@
 package com.civen.civen_stumanager.result;
 
 /**
- * @author EdwardXu
- * @description 结果代码
+ * 结果代码
  */
 
 public enum Code {

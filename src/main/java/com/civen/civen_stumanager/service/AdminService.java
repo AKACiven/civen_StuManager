@@ -3,8 +3,7 @@ package com.civen.civen_stumanager.service;
 import com.civen.civen_stumanager.entity.Admin;
 
 /**
- * @author EdwardXu
- * @description 管理员的service层
+ * 管理员的service层
  */
 public interface AdminService {
     /**

@@ -5,8 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * @author EdwardXu
- * @description 从前端接收登陆的表单
+ * 从前端接收登陆的表单
  */
 @Data
 @AllArgsConstructor

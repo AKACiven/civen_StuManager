@@ -14,8 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author EdwardXu
- * @description 登陆
+ * 登陆
  */
 @RestController
 public class LoginController {
@@ -30,7 +29,7 @@ public class LoginController {
             return Result.success(map);
         } else {
             Map<String, Object> map = new HashMap<>(64);
-            map.put("message", "用户名或密码错误！");
+            map.put("message", "error username or password！");
             return Result.failed(map);
         }
     }
@@ -47,11 +46,11 @@ public class LoginController {
                 map.put("roles",role);
                 return Result.success(map);
             }else {
-                map.put("message","查询失败");
+                map.put("message","check failed");
                 return Result.failed(map);
             }
         }else{
-            map.put("message","查询失败");
+            map.put("message","check failed");
             return Result.failed(map);
         }
     }
