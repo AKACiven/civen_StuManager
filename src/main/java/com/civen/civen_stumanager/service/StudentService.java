@@ -7,4 +7,6 @@ import java.util.List;
 public interface StudentService {
 
     List<Student> studentOverall();
+
+    void updateStudent(Student student);
 }

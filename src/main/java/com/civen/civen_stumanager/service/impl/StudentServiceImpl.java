@@ -19,4 +19,13 @@ public class StudentServiceImpl implements StudentService {
             return mapper.studentOverall();
         }
     }
+
+    @Override
+    public void updateStudent(Student student) {
+        try (SqlSession sqlSession = MybatisUtils.getSqlSession()) {
+            StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
+            mapper.updateStudent(student);
+            sqlSession.commit();
+        }
+    }
 }

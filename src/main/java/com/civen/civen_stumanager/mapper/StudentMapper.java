@@ -7,4 +7,6 @@ import java.util.List;
 public interface StudentMapper {
 
     List<Student> studentOverall();
+
+    void updateStudent(Student student);
 }

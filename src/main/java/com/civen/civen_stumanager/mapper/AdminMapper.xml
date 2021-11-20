@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.civen.civen_stumanager.mapper.AdminMapper">
     <select id="getAdminByUsername" resultType="com.civen.civen_stumanager.entity.Admin" parameterType="String">
-        select * from stumanager.admin where username = #{username}
+        select * from admin where username = #{username}
     </select>
 
 </mapper>
