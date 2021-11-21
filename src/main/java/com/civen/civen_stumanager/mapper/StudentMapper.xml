@@ -7,7 +7,10 @@
         select * from stumanager.student;
     </select>
     <select id="updateStudent" parameterType="com.civen.civen_stumanager.entity.Student">
-        update stumanager.student set Sname = #{Sname},Ssex = #{Ssex},Sage = #{Sage},Sdept = #{Sdept} where student.Sno = #{Sno};
+        update stumanager.student set sname = #{sname},ssex = #{ssex},sage = #{sage},sdept = #{sdept} where student.sno = #{sno};
+    </select>
+    <select id="checkStudent" resultType="com.civen.civen_stumanager.entity.Student">
+        select * from stumanager.student where sno = #{sno};
     </select>
     <insert id="addStudent" parameterType="com.civen.civen_stumanager.entity.Student">
         insert into stumanager.student (sno, sname, ssex, sage, sdept) values (#{sno},#{sname},#{ssex},#{sage},#{sdept});

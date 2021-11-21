@@ -8,11 +8,6 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
 
-/**
- * 跨域问题
- * @author EdwardXu
- */
-
 @Configuration
 public class GlobalCorsConfig {
 

@@ -9,13 +9,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class StudentDto {
 
-    private String Sno;
+    private String sno;
 
-    private String Sname;
+    private String sname;
 
-    private String Ssex;
+    private String ssex;
 
-    private int Sage;
+    private int sage;
 
-    private String Sdept;
+    private String sdept;
 }

@@ -4,9 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/**
- * 返回给前端的结果
- */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

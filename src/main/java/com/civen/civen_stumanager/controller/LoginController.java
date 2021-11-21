@@ -13,9 +13,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * 登陆
- */
 @RestController
 public class LoginController {
     @RequestMapping(value = "/user/login", method = RequestMethod.POST)

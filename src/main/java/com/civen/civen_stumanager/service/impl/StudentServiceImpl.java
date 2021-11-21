@@ -28,4 +28,12 @@ public class StudentServiceImpl implements StudentService {
             sqlSession.commit();
         }
     }
+
+    @Override
+    public Student checkStudent(String sno) {
+        try (SqlSession sqlSession = MybatisUtils.getSqlSession()){
+            StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
+            return mapper.checkStudent(sno);
+        }
+    }
 }

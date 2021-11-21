@@ -7,8 +7,6 @@ import com.civen.civen_stumanager.util.MybatisUtils;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Service;
 
-/**
- */
 @Service
 public class AdminServiceImpl implements AdminService {
     @Override
