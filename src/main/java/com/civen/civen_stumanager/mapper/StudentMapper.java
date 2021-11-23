@@ -1,9 +1,9 @@
 package com.civen.civen_stumanager.mapper;
 
+import com.civen.civen_stumanager.entity.StuCourse;
 import com.civen.civen_stumanager.entity.Student;
 
 import java.util.List;
-import java.util.Map;
 
 public interface StudentMapper {
 
@@ -12,4 +12,8 @@ public interface StudentMapper {
     void updateStudent(Student student);
 
     Student checkStudent(String sno);
+
+    void addStudent(Student student);
+
+    List<StuCourse> chechStuCourse(String sno);
 }
