@@ -21,4 +21,7 @@
     <update id="updateStuCoGrade" parameterType="com.civen.civen_stumanager.entity.StuCoGrade">
         update sc set grade = #{grade} where sno = #{sno} and cno = #{cno};
     </update>
+    <select id="gradeScale" parameterType="String" statementType="CALLABLE" resultType="com.civen.civen_stumanager.entity.GradeScale">
+        {call gradescale(#{sdept})}
+    </select>
 </mapper>

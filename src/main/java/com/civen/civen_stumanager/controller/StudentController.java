@@ -1,6 +1,7 @@
 package com.civen.civen_stumanager.controller;
 
 import com.civen.civen_stumanager.dto.StudentDto;
+import com.civen.civen_stumanager.entity.GradeScale;
 import com.civen.civen_stumanager.entity.StuCoGrade;
 import com.civen.civen_stumanager.entity.StuCourse;
 import com.civen.civen_stumanager.entity.Student;
@@ -103,5 +104,13 @@ public class StudentController {
         map.put("message","success!");
         return Result.success(map);
 
+    }
+
+    @RequestMapping(value = "/gradeScale", method = RequestMethod.GET)
+    public Result<GradeScale> grade_Scale(@RequestParam String sdept) {
+        GradeScale gradeScale = ss.gradeScale(sdept);
+        System.out.println(sdept);
+//        System.out.println(gradeScale.getAvg_grade());
+        return Result.success(gradeScale);
     }
 }
