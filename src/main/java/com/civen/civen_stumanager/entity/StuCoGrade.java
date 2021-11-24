@@ -7,11 +7,11 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class StuCourse {
+public class StuCoGrade {
+
+    private String sno;
 
     private String cno;
-
-    private String cname;
 
     private int grade;
 }

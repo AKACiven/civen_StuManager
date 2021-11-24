@@ -1,6 +1,7 @@
 package com.civen.civen_stumanager.controller;
 
 import com.civen.civen_stumanager.dto.StudentDto;
+import com.civen.civen_stumanager.entity.StuCoGrade;
 import com.civen.civen_stumanager.entity.StuCourse;
 import com.civen.civen_stumanager.entity.Student;
 import com.civen.civen_stumanager.mapper.StudentMapper;
@@ -91,5 +92,16 @@ public class StudentController {
             dtos.add(Transfer.stuCourse(p));
         }
         return Result.success(dtos);
+    }
+
+    @RequestMapping(value = "/editGrade", method = RequestMethod.GET)
+    public Result<Map<String, Object>> update_StuCoGrade(@RequestParam String sno, String cno, int grade) {
+        Map<String,Object> map = new HashMap<>();
+
+        ss.updateStuCoGrade(new StuCoGrade(sno, cno, grade));
+
+        map.put("message","success!");
+        return Result.success(map);
+
     }
 }

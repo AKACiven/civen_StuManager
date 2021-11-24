@@ -10,6 +10,6 @@ public class Transfer {
     }
 
     public static StuCourse stuCourse(StuCourse scourse){
-        return new StuCourse(scourse.getCname(), scourse.getGrade());
+        return new StuCourse(scourse.getCno(),scourse.getCname(), scourse.getGrade());
     }
 }

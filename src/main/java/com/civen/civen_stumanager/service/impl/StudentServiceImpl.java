@@ -1,5 +1,6 @@
 package com.civen.civen_stumanager.service.impl;
 
+import com.civen.civen_stumanager.entity.StuCoGrade;
 import com.civen.civen_stumanager.entity.StuCourse;
 import com.civen.civen_stumanager.entity.Student;
 import com.civen.civen_stumanager.mapper.StudentMapper;
@@ -34,6 +35,15 @@ public class StudentServiceImpl implements StudentService {
         try (SqlSession sqlSession = MybatisUtils.getSqlSession()){
             StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
             return mapper.chechStuCourse(sno);
+        }
+    }
+
+    @Override
+    public void updateStuCoGrade(StuCoGrade stuCoGrade) {
+        try (SqlSession sqlSession = MybatisUtils.getSqlSession()){
+            StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
+            mapper.updateStuCoGrade(stuCoGrade);
+            sqlSession.commit();
         }
     }
 }

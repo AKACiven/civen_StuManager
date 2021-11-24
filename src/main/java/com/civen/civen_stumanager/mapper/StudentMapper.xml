@@ -16,6 +16,9 @@
         insert into stumanager.student (sno, sname, ssex, sage, sdept) values (#{sno},#{sname},#{ssex},#{sage},#{sdept});
     </insert>
     <select id="chechStuCourse" resultType="com.civen.civen_stumanager.entity.StuCourse">
-        select course.cname,scc.grade from (select sc.cno,sc.grade from sc where sc.sno = #{sno}) scc,course where scc.cno = course.cno;
+        select course.cno,course.cname,scc.grade from (select sc.cno,sc.grade from sc where sc.sno = #{sno}) scc,course where scc.cno = course.cno;
     </select>
+    <update id="updateStuCoGrade" parameterType="com.civen.civen_stumanager.entity.StuCoGrade">
+        update sc set grade = #{grade} where sno = #{sno} and cno = #{cno};
+    </update>
 </mapper>
