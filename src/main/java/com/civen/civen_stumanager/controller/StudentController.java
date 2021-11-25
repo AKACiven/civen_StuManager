@@ -1,10 +1,7 @@
 package com.civen.civen_stumanager.controller;
 
 import com.civen.civen_stumanager.dto.StudentDto;
-import com.civen.civen_stumanager.entity.GradeScale;
-import com.civen.civen_stumanager.entity.StuCoGrade;
-import com.civen.civen_stumanager.entity.StuCourse;
-import com.civen.civen_stumanager.entity.Student;
+import com.civen.civen_stumanager.entity.*;
 import com.civen.civen_stumanager.mapper.StudentMapper;
 import com.civen.civen_stumanager.result.Result;
 import com.civen.civen_stumanager.service.StudentService;
@@ -109,8 +106,12 @@ public class StudentController {
     @RequestMapping(value = "/gradeScale", method = RequestMethod.GET)
     public Result<GradeScale> grade_Scale(@RequestParam String sdept) {
         GradeScale gradeScale = ss.gradeScale(sdept);
-        System.out.println(sdept);
-//        System.out.println(gradeScale.getAvg_grade());
         return Result.success(gradeScale);
+    }
+
+    @RequestMapping(value = "/deptGrades", method = RequestMethod.GET)
+    public Result<List<DeptGrades>> dept_Grades(@RequestParam String sdept) {
+        List<DeptGrades> deptGrades = ss.deptofGrades(sdept);
+        return Result.success(deptGrades);
     }
 }
