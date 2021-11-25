@@ -114,4 +114,29 @@ public class StudentController {
         List<DeptGrades> deptGrades = ss.deptofGrades(sdept);
         return Result.success(deptGrades);
     }
+
+    @RequestMapping(value = "/courseScale", method = RequestMethod.GET)
+    public Result<List<CourseScale>> course_Scale() {
+        List<CourseScale> courseScales = ss.coursescale();
+        return Result.success(courseScales);
+    }
+
+    @RequestMapping(value = "/addCourse", method = RequestMethod.POST)
+    public Result<Map<String, Object>> update_StuCoGrade(@RequestBody Course course) {
+        Map<String,Object> map = new HashMap<>();
+
+        ss.addCourse(new Course(course.getCno(), course.getCname(), course.getCcredit()));
+
+        map.put("message","success!");
+        return Result.success(map);
+
+    }
+
+    @RequestMapping(value = "/updateCourse", method = RequestMethod.GET)
+    public Result<Map<String, Object>> update_Course(@RequestParam String cno, Integer ccredit, String cname) {
+        ss.updateCourse(new Course(cno, cname, ccredit));
+        Map<String,Object> map = new HashMap<>();
+        map.put("message","success!");
+        return Result.success(map);
+    }
 }

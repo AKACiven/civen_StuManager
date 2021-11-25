@@ -27,4 +27,13 @@
     <select id="deptofGrades" parameterType="String" statementType="CALLABLE" resultType="com.civen.civen_stumanager.entity.DeptGrades">
         {call deptgrades(#{sdept})}
     </select>
+    <select id="coursescale" resultType="com.civen.civen_stumanager.entity.CourseScale">
+        select * from course;
+    </select>
+    <insert id="addCourse" parameterType="com.civen.civen_stumanager.entity.Course">
+        insert into course values(#{cno}, #{cname},  #{ccredit});
+    </insert>
+    <update id="updateCourse" parameterType="com.civen.civen_stumanager.entity.Course">
+        update course set ccredit = #{ccredit} where cno = #{cno};
+    </update>
 </mapper>

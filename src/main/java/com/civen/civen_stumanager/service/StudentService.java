@@ -18,4 +18,10 @@ public interface StudentService {
     GradeScale gradeScale(String sdept);
 
     List<DeptGrades> deptofGrades(String sdept);
+
+    List<CourseScale> coursescale();
+
+    void addCourse(Course course);
+
+    void updateCourse(Course course);
 }

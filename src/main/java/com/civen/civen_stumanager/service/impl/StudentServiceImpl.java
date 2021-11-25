@@ -60,4 +60,30 @@ public class StudentServiceImpl implements StudentService {
             return mapper.deptofGrades(sdept);
         }
     }
+
+    @Override
+    public List<CourseScale> coursescale() {
+        try (SqlSession sqlSession = MybatisUtils.getSqlSession()){
+            StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
+            return mapper.coursescale();
+        }
+    }
+
+    @Override
+    public void addCourse(Course course) {
+        try (SqlSession sqlSession = MybatisUtils.getSqlSession()){
+            StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
+            mapper.addCourse(course);
+            sqlSession.commit();
+        }
+    }
+
+    @Override
+    public void updateCourse(Course course) {
+        try (SqlSession sqlSession = MybatisUtils.getSqlSession()){
+            StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
+            mapper.updateCourse(course);
+            sqlSession.commit();
+        }
+    }
 }
