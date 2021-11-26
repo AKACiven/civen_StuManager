@@ -86,4 +86,38 @@ public class StudentServiceImpl implements StudentService {
             sqlSession.commit();
         }
     }
+
+    @Override
+    public void squeezeCourse() {
+        try (SqlSession sqlSession = MybatisUtils.getSqlSession()){
+            StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
+            mapper.squeezeCourse();
+            sqlSession.commit();
+        }
+    }
+
+    @Override
+    public List<InCourse> checkInCourse(String cno) {
+        try (SqlSession sqlSession = MybatisUtils.getSqlSession()){
+            StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
+            return mapper.checkInCourse(cno);
+        }
+    }
+
+    @Override
+    public List<OutCourse> checkOutCourse(String cno) {
+        try (SqlSession sqlSession = MybatisUtils.getSqlSession()){
+            StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
+            return mapper.checkOutCourse(cno);
+        }
+    }
+
+    @Override
+    public void addStuToCo(AddStuToCo addStuToCo) {
+        try (SqlSession sqlSession = MybatisUtils.getSqlSession()){
+            StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
+            mapper.addStuToCo(addStuToCo);
+            sqlSession.commit();
+        }
+    }
 }

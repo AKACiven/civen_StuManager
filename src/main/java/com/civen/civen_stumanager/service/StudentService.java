@@ -24,4 +24,12 @@ public interface StudentService {
     void addCourse(Course course);
 
     void updateCourse(Course course);
+
+    void squeezeCourse();
+
+    List<InCourse> checkInCourse(String cno);
+
+    List<OutCourse> checkOutCourse(String cno);
+
+    void addStuToCo(AddStuToCo addStuToCo);
 }

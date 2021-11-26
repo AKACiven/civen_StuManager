@@ -139,4 +139,32 @@ public class StudentController {
         map.put("message","success!");
         return Result.success(map);
     }
+
+    @RequestMapping(value = "/squeezeCourse", method = RequestMethod.GET)
+    public Result<Map<String, Object>> squeeze_Course() {
+        ss.squeezeCourse();
+        Map<String,Object> map = new HashMap<>();
+        map.put("message","success!");
+        return Result.success(map);
+    }
+
+    @RequestMapping(value = "/checkInCourse", method = RequestMethod.GET)
+    public Result<List<InCourse>> check_InCourse(@RequestParam String cno) {
+        List<InCourse> inCourses = ss.checkInCourse(cno);
+        return Result.success(inCourses);
+    }
+
+    @RequestMapping(value = "/checkOutCourse", method = RequestMethod.GET)
+    public Result<List<OutCourse>> check_OutCourse(@RequestParam String cno) {
+        List<OutCourse> outCourses = ss.checkOutCourse(cno);
+        return Result.success(outCourses);
+    }
+
+    @RequestMapping(value = "/addStuToCo", method = RequestMethod.GET)
+    public Result<Map<String, Object>> add_StuToCo(@RequestParam String cno, String sno) {
+        ss.addStuToCo(new AddStuToCo(cno, sno));
+        Map<String,Object> map = new HashMap<>();
+        map.put("message","success!");
+        return Result.success(map);
+    }
 }

@@ -36,4 +36,16 @@
     <update id="updateCourse" parameterType="com.civen.civen_stumanager.entity.Course">
         update course set ccredit = #{ccredit} where cno = #{cno};
     </update>
+    <delete id="squeezeCourse">
+        delete from course where course.cno not in (select sc.cno from sc);
+    </delete>
+    <select id="checkInCourse" parameterType="String" resultType="com.civen.civen_stumanager.entity.InCourse">
+        select t.*,sc.grade from (select sno,sname from student where sno in (select sc.Sno from sc where sc.Cno = #{cno})) t,sc where t.sno = sc.sno and sc.cno = #{cno};
+    </select>
+    <select id="checkOutCourse" parameterType="String" resultType="com.civen.civen_stumanager.entity.OutCourse">
+        select sno,sname from student where sno not in (select sc.Sno from sc where sc.Cno = #{cno});
+    </select>
+    <insert id="addStuToCo" parameterType="com.civen.civen_stumanager.entity.AddStuToCo">
+        insert into sc values (#{sno}, #{cno}, null);
+    </insert>
 </mapper>
